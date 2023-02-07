@@ -31,7 +31,7 @@ bool	Phonebook::is_number(const std::string &information)
 	return (true);	
 }
 
-Phonebook::Phonebook(){size = 0;};
+Phonebook::Phonebook() : size(0){};
 Phonebook::~Phonebook(){};
 
 bool	Phonebook::add_contact_failed(int	&i)
@@ -56,7 +56,7 @@ bool	Phonebook::add_contact_failed(int	&i)
 			return (true);
 		if (j == 0)
 		{
-			if (is_string(information))
+			if (is_string(information) && information.length() != 0)
 				contacts[i].set_name(information);
 			else
 			{

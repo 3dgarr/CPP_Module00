@@ -1,4 +1,5 @@
 #pragma once
+
 #include <iostream>
 
 class Contact
@@ -11,11 +12,11 @@ class Contact
 	void				set_phone_number(const std::string &str);		
 	void				set_darkest_secret(const std::string &str);		
 
-	const std::string&	get_name();
-	const std::string&	get_last_name();
-	const std::string&	get_nickname();
-	const std::string&	get_phone_number();
-	const std::string&	get_darkest_secret();
+	const std::string&	get_name() const;
+	const std::string&	get_last_name() const;
+	const std::string&	get_nickname() const;
+	const std::string&	get_phone_number() const;
+	const std::string&	get_darkest_secret() const;
 	
 	private:
 

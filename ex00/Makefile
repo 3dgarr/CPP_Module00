@@ -11,17 +11,16 @@ $(OBJ): $(SRC)
 	@$(CXX) $(CXXFLAGS) -c $(SRC) -o $(OBJ)
 
 $(NAME): $(OBJ)
-	@echo "$(YELLOW)🌪 Compiling...$(DEFAULT)"
 	@$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
-	@echo "$(GREEN)✅Compiled!$(DEFAULT)"
+	@echo "$(GREEN)✅ Compiled!$(DEFAULT)"
 
 clean:
 	@$(RM) $(OBJ)
-	@echo "$(RED)🧨Objects are destroyed$(DEFAULT)"
+	@echo "$(RED)🧨 Objects are destroyed$(DEFAULT)"
 
 fclean: clean
 	@$(RM) $(NAME)
-	@echo "$(RED)🧨Executable is destroyed$(DEFAULT)"
+	@echo "$(RED)🧨 Executable is destroyed$(DEFAULT)"
 
 
 re : clean all

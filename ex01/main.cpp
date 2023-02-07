@@ -5,8 +5,6 @@ int main()
 {
 	Phonebook phonebook;
 
-	
-
 	phonebook.start_program();
 
 }

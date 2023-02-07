@@ -1,31 +1,28 @@
-CXX = c++
-NAME = phonebook
-SRCS = $(wildcard *.cpp)
-OBJS = $(SRCS:.cpp=.o)
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-
+NAME		= phonebook
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
+CXX			= c++
+SRC			= $(wildcard *.cpp)
+RM			= rm -rf
+OBJ			= $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-
-
-$(NAME): $(OBJS)
-	@echo "$(YELLOW)🌪 Compiling...$(DEFAULT)"
-	@$(CXX) $(OBJS) -o $(NAME)
-	@echo "$(GREEN)✅Compiled!$(DEFAULT)"
+$(NAME): $(OBJ)
+	@$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
+	@echo "$(GREEN)✅ Compiled!$(DEFAULT)"
 
 clean:
-	@rm -f *.o
-	@echo "$(RED)🧨Objects are destroyed$(DEFAULT)"
+	@$(RM) $(OBJ)
+	@echo "$(RED)🧨 Objects are destroyed$(DEFAULT)"
 
 fclean: clean
-	@rm -f $(NAME)
-	@echo "$(RED)🧨Executable is destroyed$(DEFAULT)"
+	@$(RM) $(NAME)
+	@echo "$(RED)🧨 Executable is destroyed$(DEFAULT)"
 
 
-re: fclean all
+re : clean all
 
-.PHONY: all clean fclean re
+.PHONY : all clean fclean re
 
 #COLORS
 RED = \033[1;31m
